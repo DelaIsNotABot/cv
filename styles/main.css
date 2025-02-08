@@ -9,89 +9,19 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  background: var(--secondary-color);
+  font-family: "Fira Code", monospace;
+  color: var(--text-color);
+  overflow: hidden;
+}
+
+.landing-container {
+  height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background-color: #f0f0f0;
-}
-
-.container {
-  width: 80%;
-  max-width: 1200px;
-}
-
-.typing-container {
-  margin-bottom: 40px;
-  padding: 20px;
-}
-
-.prompt {
-  color: #333;
-  margin-right: 10px;
-}
-
-.typing {
-  display: inline-block;
-  overflow: hidden;
-  margin: 0;
-  white-space: nowrap;
-  border-right: 3px solid #333;
-  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: #333;
-  }
-}
-
-.options {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  padding: 20px;
-  position: relative;
-}
-
-.option {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  cursor: pointer;
-  position: relative;
-  z-index: 1;
-}
-
-.option:hover {
-  transform: translateY(-5px);
-  z-index: 2;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-h2 {
-  margin-top: 0;
-  color: #333;
-}
-
-p {
-  color: #666;
+  gap: 2rem;
 }
 
 /* Terminal Effect */
@@ -126,59 +56,6 @@ p {
 }
 .dot:nth-child(3) {
   background: #27c93f;
-}
-
-.terminal-body {
-  padding: 1rem;
-  font-family: "Fira Code", monospace;
-}
-
-.command-line {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.5rem;
-}
-
-.prompt {
-  color: var(--primary-color);
-  margin-right: 0.5rem;
-}
-
-.command {
-  color: var(--text-color);
-}
-
-.response {
-  color: var(--accent-color);
-  margin-bottom: 1rem;
-  padding-left: 1.5rem;
-}
-
-.terminal-cursor {
-  display: inline-block;
-  width: 0.6em;
-  height: 1em;
-  background-color: var(--primary-color);
-  animation: blink 1s step-end infinite;
-  vertical-align: text-bottom;
-  margin-left: 2px;
-}
-
-@keyframes blink {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-}
-
-/* Efecto de escritura */
-.typing-text {
-  display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
 }
 
 /* Portal Navigation */
@@ -283,4 +160,57 @@ p {
   .terminal-intro {
     width: 90%;
   }
+}
+
+.terminal-body {
+  padding: 1rem;
+  font-family: "Fira Code", monospace;
+}
+
+.command-line {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.prompt {
+  color: var(--primary-color);
+  margin-right: 0.5rem;
+}
+
+.command {
+  color: var(--text-color);
+}
+
+.response {
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.terminal-cursor {
+  display: inline-block;
+  width: 0.6em;
+  height: 1em;
+  background-color: var(--primary-color);
+  animation: blink 1s step-end infinite;
+  vertical-align: text-bottom;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Efecto de escritura */
+.typing-text {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
 }
