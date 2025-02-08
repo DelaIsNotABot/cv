@@ -1,26 +1,82 @@
-// Actualización del gráfico de radar para soft skills
-const softSkillsData = {
-  labels: [
-    "Consistency & Resilience",
-    "Communication",
-    "Idea Promotion",
-    "Adaptability",
-    "Work Ethic",
-    "Environmental Flexibility",
-  ],
-  datasets: [
-    {
-      label: "Soft Skills",
-      data: [95, 85, 88, 90, 95, 85],
-      backgroundColor: "rgba(0, 255, 157, 0.2)",
-      borderColor: "rgba(0, 255, 157, 1)",
-      pointBackgroundColor: "rgba(0, 255, 157, 1)",
-      pointBorderColor: "#fff",
-      pointHoverBackgroundColor: "#fff",
-      pointHoverBorderColor: "rgba(0, 255, 157, 1)",
+// Inicialización del gráfico de radar para soft skills
+document.addEventListener("DOMContentLoaded", function () {
+  // Gráfico de Soft Skills
+  const ctx = document.getElementById("softSkillsChart").getContext("2d");
+  new Chart(ctx, {
+    type: "radar",
+    data: {
+      labels: [
+        "Communication",
+        "Team Work",
+        "Problem Solving",
+        "Adaptability",
+        "Leadership",
+        "Time Management",
+      ],
+      datasets: [
+        {
+          label: "Soft Skills",
+          data: [90, 85, 95, 88, 80, 85],
+          backgroundColor: "rgba(0, 255, 157, 0.2)",
+          borderColor: "rgba(0, 255, 157, 1)",
+          pointBackgroundColor: "rgba(0, 255, 157, 1)",
+          pointBorderColor: "#fff",
+          pointHoverBackgroundColor: "#fff",
+          pointHoverBorderColor: "rgba(0, 255, 157, 1)",
+        },
+      ],
     },
-  ],
-};
+    options: {
+      scales: {
+        r: {
+          angleLines: {
+            color: "rgba(255, 255, 255, 0.1)",
+          },
+          grid: {
+            color: "rgba(255, 255, 255, 0.1)",
+          },
+          pointLabels: {
+            color: "#8892b0",
+          },
+          ticks: {
+            color: "#8892b0",
+            backdropColor: "transparent",
+          },
+        },
+      },
+      plugins: {
+        legend: {
+          display: false,
+        },
+      },
+    },
+  });
+
+  // Inicializar barras de nivel de idiomas
+  document.querySelectorAll(".level-bar").forEach((bar) => {
+    const level = bar.getAttribute("data-level");
+    bar.style.setProperty("--level", `${level}%`);
+  });
+
+  // Botón de descarga de CV
+  document.getElementById("downloadCV").addEventListener("click", function () {
+    // Aquí puedes añadir la lógica para descargar el CV
+    alert("CV download functionality will be implemented");
+  });
+
+  // Animación de las barras de progreso al hacer scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.style.width = entry.target.getAttribute("data-width");
+      }
+    });
+  });
+
+  document.querySelectorAll(".progress").forEach((bar) => {
+    observer.observe(bar);
+  });
+});
 
 // Función para el efecto de escritura
 function typeWriter(element, text, speed = 50) {
