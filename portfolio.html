@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Jorge Alias - Professional Portfolio" />
+    <title>Portfolio | Jorge Alias</title>
+    <link rel="canonical" href="https://jorgealias.me/portfolio" />
+    <link rel="stylesheet" href="styles/portfolio.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  </head>
+  <body>
+    <nav class="top-nav">
+      <a href="index.html" class="nav-home">
+        <i class="fas fa-terminal"></i>
+      </a>
+      <button id="downloadCV" class="download-btn">
+        <i class="fas fa-file-download"></i> Download CV
+      </button>
+    </nav>
+
+    <main class="portfolio-container">
+      <!-- Sección de Perfil -->
+      <section class="profile-section">
+        <div class="profile-header">
+          <div class="profile-info">
+            <h1 class="typing-text">Jorge Alias Álvarez</h1>
+            <h2 class="typing-text">
+              Data & Telecommunications Engineering Student
+            </h2>
+            <p class="location typing-text">
+              <i class="fas fa-map-marker-alt"></i> Gijón, Spain
+            </p>
+            <p class="age typing-text">
+              <i class="fas fa-user"></i> 19 years old
+            </p>
+          </div>
+          <div class="profile-image">
+            <div class="image-placeholder"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección de Estudios -->
+      <section class="education-section card-section">
+        <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h3>
+                Double Degree in Data Engineering & Telecommunications
+                Engineering
+              </h3>
+              <p>Escuela Politécnica de Ingeniería de Gijón</p>
+              <p>Universidad de Oviedo</p>
+              <span class="date">2024 - Present</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección de Habilidades Técnicas -->
+      <section class="skills-section card-section">
+        <h2><i class="fas fa-code"></i> Technical Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3>Programming Languages</h3>
+            <div class="skill-bars">
+              <div class="skill-bar">
+                <span class="skill-name">Python</span>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 90%"></div>
+                </div>
+              </div>
+              <div class="skill-bar">
+                <span class="skill-name">SQL</span>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 85%"></div>
+                </div>
+              </div>
+              <div class="skill-bar">
+                <span class="skill-name">R</span>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 75%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3>Data Science & Analytics</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Machine Learning</span>
+              <span class="skill-tag">Data Visualization</span>
+              <span class="skill-tag">Statistical Analysis</span>
+              <span class="skill-tag">Big Data</span>
+              <span class="skill-tag">Data Mining</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3>Telecommunications</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Network Protocols</span>
+              <span class="skill-tag">Signal Processing</span>
+              <span class="skill-tag">Wireless Communications</span>
+              <span class="skill-tag">Network Security</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección de Soft Skills -->
+      <section class="soft-skills-section card-section">
+        <h2><i class="fas fa-users"></i> Soft Skills</h2>
+        <div class="soft-skills-grid">
+          <div class="soft-skill-card">
+            <i class="fas fa-dumbbell"></i>
+            <h3>Consistency & Resilience</h3>
+            <p>Strong work ethic and persistent dedication to goals</p>
+          </div>
+          <div class="soft-skill-card">
+            <i class="fas fa-comments"></i>
+            <h3>Communication</h3>
+            <p>Effective communicator and idea promoter</p>
+          </div>
+          <div class="soft-skill-card">
+            <i class="fas fa-sync-alt"></i>
+            <h3>Adaptability</h3>
+            <p>Flexible approach to different environments</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección de Idiomas -->
+      <section class="languages-section card-section">
+        <h2><i class="fas fa-language"></i> Languages</h2>
+        <div class="language-cards">
+          <div class="language-card">
+            <span class="language">Spanish</span>
+            <span class="level">Native</span>
+            <div class="level-bar" data-level="100"></div>
+          </div>
+          <div class="language-card">
+            <span class="language">English</span>
+            <span class="level">C1</span>
+            <div class="level-bar" data-level="90"></div>
+          </div>
+          <div class="language-card">
+            <span class="language">French</span>
+            <span class="level">B1</span>
+            <div class="level-bar" data-level="60"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección de Motivaciones -->
+      <section class="motivations-section card-section">
+        <h2><i class="fas fa-rocket"></i> Motivations</h2>
+        <div class="motivations-grid">
+          <div class="motivation-card">
+            <i class="fas fa-lightbulb"></i>
+            <h3>Innovation</h3>
+            <p>
+              Passionate about creating innovative solutions using data and
+              technology
+            </p>
+          </div>
+          <div class="motivation-card">
+            <i class="fas fa-brain"></i>
+            <h3>Continuous Learning</h3>
+            <p>
+              Committed to staying at the forefront of technological advances
+            </p>
+          </div>
+          <div class="motivation-card">
+            <i class="fas fa-network-wired"></i>
+            <h3>Connectivity</h3>
+            <p>
+              Interested in how data and telecommunications shape our future
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección de Hobbies -->
+      <section class="hobbies-section card-section">
+        <h2><i class="fas fa-heart"></i> Hobbies & Interests</h2>
+        <div class="hobbies-grid">
+          <div class="hobby-card">
+            <i class="fas fa-code"></i>
+            <span>Programming</span>
+          </div>
+          <div class="hobby-card">
+            <i class="fas fa-robot"></i>
+            <span>Robotics</span>
+          </div>
+          <div class="hobby-card">
+            <i class="fas fa-brain"></i>
+            <span>Philosophy</span>
+          </div>
+          <div class="hobby-card">
+            <i class="fas fa-book"></i>
+            <span>Reading</span>
+          </div>
+          <div class="hobby-card">
+            <i class="fas fa-dumbbell"></i>
+            <span>Gym</span>
+          </div>
+          <div class="hobby-card">
+            <i class="fas fa-lightbulb"></i>
+            <span>Entrepreneurship</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="scripts/portfolio.js"></script>
+  </body>
+</html>
