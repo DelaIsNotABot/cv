@@ -99,8 +99,7 @@ body {
   border: 2px solid var(--primary-color);
   overflow: hidden;
   background: var(--card-bg);
-  z-index: 1;
-  transition: all 0.3s ease; /* Suaviza los cambios de tamaño */
+  z-index: 10;
 }
 
 /* Profile image styling */
@@ -110,10 +109,6 @@ body {
   object-fit: cover;
   object-position: center;
   display: block;
-  max-width: 100%;
-  height: auto;
-  -webkit-backface-visibility: hidden; /* Mejora la calidad en webkit */
-  backface-visibility: hidden;
 }
 
 /* Timeline */
