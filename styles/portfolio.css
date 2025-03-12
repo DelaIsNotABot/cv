@@ -70,10 +70,20 @@ body {
   margin-bottom: 3rem;
 }
 
+/* Profile header container */
 .profile-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  position: relative;
+  width: 100%;
+}
+
+/* Profile info (texto) */
+.profile-info {
+  flex: 1;
+  padding-right: 160px; /* Espacio para la imagen */
 }
 
 .profile-info h1 {
@@ -93,7 +103,7 @@ body {
   width: 140px;
   height: 140px;
   position: absolute;
-  top: 40px;
+  top: 0;
   right: 40px;
   border-radius: 50%;
   border: 2px solid var(--primary-color);
@@ -262,24 +272,20 @@ body {
   margin-bottom: 0.5rem;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* Media queries para responsividad */
+@media screen and (max-width: 768px) {
   .profile-header {
     flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-info {
+    padding-right: 0;
     text-align: center;
-  }
-
-  .image-placeholder {
-    margin-top: 2rem;
-  }
-
-  .skills-grid {
-    grid-template-columns: 1fr;
+    margin-bottom: 20px;
   }
 
   .profile-image {
-    width: 100px;
-    height: 100px;
     position: relative;
     top: 0;
     right: 0;
