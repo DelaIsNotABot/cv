@@ -112,10 +112,10 @@
           </div>
         </div>
 
-        <!-- Proyecto 5: Sorting Algorithms Visualizer -->
+        <!-- Sorting Visualizer Project -->
         <div class="project-card">
           <div class="project-header">
-            <h3>Sorting Algorithms Visualizer</h3>
+            <h3>Algorithm Visualizer</h3>
             <div class="project-tags">
               <span class="tag">Algorithms</span>
               <span class="tag">JavaScript</span>
@@ -123,15 +123,68 @@
             </div>
           </div>
           <div class="project-content">
-            <div id="sortingViz" class="visualization"></div>
+            <div class="visualization-area"></div>
             <div class="project-description">
               <p>
-                Interactive visualization of sorting algorithms: QuickSort,
-                BubbleSort, MergeSort and more.
+                Interactive visualization of sorting algorithms and clustering
+                methods.
               </p>
-              <button class="interact-btn" id="launchSortingViz">
-                Launch Visualizer
-              </button>
+              <div class="sorting-controls">
+                <div class="control-group">
+                  <label>Algorithm</label>
+                  <select id="algorithm">
+                    <option value="bubble">Bubble Sort</option>
+                    <option value="selection">Selection Sort</option>
+                    <option value="insertion">Insertion Sort</option>
+                    <option value="quick">Quick Sort</option>
+                    <option value="merge">Merge Sort</option>
+                    <option value="heap">Heap Sort</option>
+                    <option value="shell">Shell Sort</option>
+                    <option value="cocktail">Cocktail Sort</option>
+                    <option value="comb">Comb Sort</option>
+                    <option value="gnome">Gnome Sort</option>
+                    <option value="kmeans">K-means Clustering</option>
+                  </select>
+                </div>
+                <div class="control-group">
+                  <label>Array Size</label>
+                  <input
+                    type="range"
+                    id="arraySize"
+                    min="10"
+                    max="100"
+                    value="50"
+                  />
+                </div>
+                <div class="control-group">
+                  <label>Speed</label>
+                  <input
+                    type="range"
+                    id="sortingSpeed"
+                    min="0"
+                    max="100"
+                    value="50"
+                  />
+                </div>
+                <div class="control-group">
+                  <button id="startSort">Start</button>
+                  <button id="resetArray">Reset</button>
+                </div>
+              </div>
+              <div class="stats-panel">
+                <div class="stat-item">
+                  <div>Comparisons</div>
+                  <div id="comparisons" class="stat-value">0</div>
+                </div>
+                <div class="stat-item">
+                  <div>Swaps</div>
+                  <div id="swaps" class="stat-value">0</div>
+                </div>
+                <div class="stat-item">
+                  <div>Time</div>
+                  <div id="time" class="stat-value">0ms</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -166,22 +219,6 @@
               max="5000"
               step="100"
             />
-          </div>
-          <div class="control-group">
-            <label>Algorithm</label>
-            <select id="algorithm">
-              <option value="bubble">Bubble Sort</option>
-              <option value="selection">Selection Sort</option>
-              <option value="insertion">Insertion Sort</option>
-              <option value="quick">Quick Sort</option>
-              <option value="merge">Merge Sort</option>
-              <option value="heap">Heap Sort</option>
-              <option value="shell">Shell Sort</option>
-              <option value="cocktail">Cocktail Sort</option>
-              <option value="comb">Comb Sort</option>
-              <option value="gnome">Gnome Sort</option>
-              <option value="kmeans">K-means Clustering</option>
-            </select>
           </div>
         </div>
       </div>

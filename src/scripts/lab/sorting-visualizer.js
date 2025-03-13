@@ -96,6 +96,13 @@ class SortingVisualizer {
   async startSorting() {
     if (this.isRunning) return;
     this.isRunning = true;
+
+    // Deshabilitar controles durante la ejecución
+    this.startButton.disabled = true;
+    this.algorithmSelect.disabled = true;
+    this.sizeSlider.disabled = true;
+    this.speedSlider.disabled = true;
+
     this.timeStart = performance.now();
 
     switch (this.algorithmSelect.value) {
@@ -135,6 +142,13 @@ class SortingVisualizer {
     }
 
     this.isRunning = false;
+
+    // Rehabilitar controles
+    this.startButton.disabled = false;
+    this.algorithmSelect.disabled = false;
+    this.sizeSlider.disabled = false;
+    this.speedSlider.disabled = false;
+
     this.updateStats();
   }
 
