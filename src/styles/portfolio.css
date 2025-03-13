@@ -4,8 +4,6 @@
   --accent-color: #64ffda;
   --text-color: #8892b0;
   --card-bg: rgba(17, 34, 64, 0.95);
-  --border-color: rgba(0, 255, 157, 0.2);
-  --success-color: #28a745;
 }
 
 body {
@@ -326,27 +324,4 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
   }
-}
-
-.project-card .visualization-area {
-  width: 100%;
-  min-height: 300px;
-  background: var(--card-bg);
-  border-radius: 4px;
-  margin-bottom: 1rem;
-}
-
-.sorting-controls {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1rem;
-  margin: 1rem 0;
-}
-
-.stats-panel {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--border-color);
 }

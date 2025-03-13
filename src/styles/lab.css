@@ -69,18 +69,12 @@ body {
   overflow: hidden;
 }
 
-.project-card::before {
-  content: "Coming Soon";
+/* Eliminar o comentar estas reglas si existen */
+/*.project-card::after {
+  content: "Coming soon";
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: var(--primary-color);
-  color: var(--secondary-color);
-  padding: 0.3rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: bold;
-}
+  ...
+}*/
 
 .project-card:hover {
   transform: translateY(-5px);
