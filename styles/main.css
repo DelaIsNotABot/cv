@@ -12,26 +12,40 @@ body {
   background: var(--secondary-color);
   font-family: "Fira Code", monospace;
   color: var(--text-color);
-  overflow: hidden;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+  left: 0;
 }
 
 .landing-container {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  padding: 2rem 1rem;
+  position: relative;
+  z-index: 1;
 }
 
 /* Terminal Effect */
 .terminal-intro {
   background: rgba(10, 25, 47, 0.85);
   border-radius: 10px;
-  width: 80%;
+  width: 90%;
   max-width: 600px;
   margin-bottom: 2rem;
   box-shadow: 0 0 20px rgba(0, 255, 157, 0.2);
+  backdrop-filter: blur(10px);
 }
 
 .terminal-header {
@@ -40,6 +54,50 @@ body {
   border-radius: 10px 10px 0 0;
   display: flex;
   gap: 6px;
+}
+
+.terminal-body {
+  padding: 1.5rem;
+  font-family: "Courier New", monospace;
+}
+
+.command-line {
+  margin: 0.5rem 0;
+}
+
+.prompt {
+  color: var(--primary-color);
+  margin-right: 0.5rem;
+}
+
+.command {
+  color: var(--accent-color);
+}
+
+.response {
+  color: var(--text-color);
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+.terminal-cursor {
+  display: inline-block;
+  width: 10px;
+  height: 18px;
+  background: var(--primary-color);
+  animation: blink 1s step-end infinite;
+  margin-left: 5px;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
 }
 
 .dot {
@@ -65,6 +123,8 @@ body {
   gap: 1.5rem;
   padding: 1rem;
   position: relative;
+  width: 100%;
+  max-width: 500px;
 }
 
 .portal-button {
@@ -79,6 +139,8 @@ body {
   align-items: center;
   transition: all 0.3s ease;
   border: 1px solid transparent;
+  min-height: 120px;
+  justify-content: center;
 }
 
 .portal-button:hover {
@@ -91,6 +153,12 @@ body {
 .portal-button .icon {
   font-size: 2rem;
   margin-bottom: 0.5rem;
+  filter: grayscale(0);
+}
+
+.portal-button .text {
+  font-weight: 500;
+  text-align: center;
 }
 
 .hover-info {
@@ -108,6 +176,7 @@ body {
   white-space: nowrap;
   z-index: 100;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--primary-color);
 }
 
 .portal-button:hover .hover-info {
@@ -115,42 +184,66 @@ body {
   bottom: -50px;
 }
 
-/* Ajustes específicos para la segunda fila */
-.portal-button:nth-child(3),
-.portal-button:nth-child(4) {
-  margin-top: 1rem;
-}
-
 /* Quick Contact */
 .quick-contact {
   position: fixed;
   bottom: 2rem;
+  right: 2rem;
   display: flex;
   gap: 1rem;
+  z-index: 1000;
 }
 
 .contact-icon {
   color: var(--primary-color);
   font-size: 1.5rem;
   transition: transform 0.3s ease;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(10, 25, 47, 0.8);
+  border-radius: 50%;
+  border: 1px solid var(--primary-color);
 }
 
 .contact-icon:hover {
   transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 255, 157, 0.3);
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+  .landing-container {
+    gap: 1.5rem;
+  }
+
+  .terminal-intro {
+    width: 95%;
+  }
+
+  .portal-navigation {
+    max-width: 450px;
+  }
+}
+
 @media (max-width: 768px) {
   .portal-navigation {
     grid-template-columns: 1fr;
+    max-width: 300px;
   }
 
   .portal-button {
     margin-top: 0 !important;
+    min-height: 100px;
+    padding: 1rem;
   }
 
   .hover-info {
     bottom: -30px;
+    font-size: 0.7rem;
   }
 
   .portal-button:hover .hover-info {
@@ -158,6 +251,31 @@ body {
   }
 
   .terminal-intro {
-    width: 90%;
+    width: 95%;
+  }
+
+  .quick-contact {
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .contact-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .landing-container {
+    padding: 1rem 0.5rem;
+  }
+
+  .terminal-body {
+    padding: 1rem;
+  }
+
+  .portal-button {
+    padding: 1rem 0.5rem;
   }
 }
